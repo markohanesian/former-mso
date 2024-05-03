@@ -36,6 +36,17 @@ export default function Navbar({ onButtonClick }) {
     fontSize: "1.5rem",
   };
 
+  const inputStyles = {
+    ...buttonStyles,
+    background: "none",
+    border: "none",
+    color: "#fff",
+    fontSize: "1.5rem",
+    width: "100%",
+    padding: "0.5rem",
+    textAlign: "center",
+  };
+
   return (
     <header style={navbarStyles}>
       <div style={sectionStyles}>
@@ -44,18 +55,9 @@ export default function Navbar({ onButtonClick }) {
       <div style={{ ...sectionStyles }}>
         <input
           type="text"
-          style={{
-            ...buttonStyles,
-            background: "none",
-            border: "none",
-            color: "#fff",
-            fontSize: "1.5rem",
-            width: "100%",
-            padding: "0.5rem",
-            textAlign: "center",
-          }}
           placeholder="Enter form title"
           aria-label="Form Title"
+          style={inputStyles}
         />
       </div>
       <div style={sectionStyles}>
