@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import FueledIcon from "./FueledIcon";
 
-export default function Navbar({ onButtonClick }) {
+export default function Navbar({ onButtonClick, pageTitle }) {
+  const [inputValue, setInputValue] = useState(pageTitle);
+  const buttonRef = useRef(null); // Reference to the button element
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleEnterPress = (e) => {
+    if (e.key === "Enter") {
+        setInputValue(e.target.value); // Trigger button click action
+        buttonRef.current.focus(); // Move focus to the button
+
+    }
+  };
+
   const navbarStyles = {
     margin: 0,
     width: "auto",
@@ -53,16 +68,18 @@ export default function Navbar({ onButtonClick }) {
         <FueledIcon />
       </div>
       <div style={{ ...sectionStyles }}>
-              <input
-                  id="page-title-input"
+        <input
+          id="page-title-input"
           type="text"
           placeholder="Enter form title"
           aria-label="Form Title"
           style={inputStyles}
+          onChange={handleChange}
+          onKeyDown={handleEnterPress}
         />
       </div>
       <div style={sectionStyles}>
-        <button style={buttonStyles} onClick={onButtonClick}>
+        <button style={buttonStyles} onClick={onButtonClick} ref={buttonRef}>
           Log In
         </button>
       </div>
