@@ -20,4 +20,7 @@ Thank you for considering my submission for the frontend web developer position.
 ## Approach
 Given that I had a deadline for this assignment, as well as the requirement to not use a UI library, I decided to focus on basic function before implementing all of the design elements, while ensuring accessibilty by using semantic markup and checking for keyboard functionality as I go. 
 
+### Question Management
+Seeing as how this is a react application and I have hooks at my disposal, I opted to use useState to manage the creation and deletion of questions on the form
+
 **to be continued**
