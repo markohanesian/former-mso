@@ -1,6 +1,7 @@
-
-
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
+#page-title-input::placeholder {
+  color: #fff;
+}

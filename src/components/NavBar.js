@@ -53,7 +53,8 @@ export default function Navbar({ onButtonClick }) {
         <FueledIcon />
       </div>
       <div style={{ ...sectionStyles }}>
-        <input
+              <input
+                  id="page-title-input"
           type="text"
           placeholder="Enter form title"
           aria-label="Form Title"
