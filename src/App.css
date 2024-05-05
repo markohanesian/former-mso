@@ -15,7 +15,26 @@ div {
   color: #fff;
 }
 
+/*not working*/
 .question-form-input::placeholder {
   color:red;
+}
 
+/* For desktop sizes */
+#question-container {
+  width: 712px; /* Set your fixed width for desktop */
+}
+
+/* For tablet sizes */
+@media only screen and (max-width: 768px) {
+  #question-container {
+    width: auto; /* Allow container to adjust based on content size */
+  }
+}
+
+/* For smartphone sizes */
+@media only screen and (max-width: 480px) {
+  #question-container {
+    width: auto; /* Allow container to adjust based on content size */
+  }
 }
