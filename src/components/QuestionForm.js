@@ -85,7 +85,6 @@ export default function QuestionForm() {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "transparent",
-    marginTop: "32px",
   };
 
   const primaryButtonStyles = {
