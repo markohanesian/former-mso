@@ -39,16 +39,55 @@ export default function QuestionForm() {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
+    backgroundColor: "#fff",
+    padding: "24px",
+    width: "712px",
+  };
+
+  const labelStyles = {
+    fontFamily: "sans-serif",
+    fontSize: "12px",
+    fontWeight: 400,
+    lineHeight: "12px",
+    textAlign: "left",
+    marginBottom: "16px",
+  };
+
+  const inputStyles = {
+    width: "100%",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    borderRadius: "4px",
+    padding: "16px",
+    fontFamily: "sans-serif",
+    fontSize: 16,
+    fontWeight: 400,
+    textAlign: "left",
+  };
+
+  const selectStyles = {
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    borderRadius: "4px",
+    padding: "11px 16px",
+  };
+
+  const answerStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    margin: "24px 0",
   };
 
   return (
-    <div>
+    <div style={formStyles}>
       {questions.map(({ id, question, answerType, shortAnswer }) => (
         <div key={id}>
           <form>
-            <div style={formStyles}>
-              <label htmlFor={`question-${id}`}>Question</label>
+            <div>
+              <label style={labelStyles} htmlFor={`question-${id}`}>
+                Question
+              </label>
               <input
+                style={inputStyles}
                 type="text"
                 id={`question-${id}`}
                 value={question}
@@ -58,9 +97,12 @@ export default function QuestionForm() {
                 placeholder="What do you want to ask?"
               />
             </div>
-            <div style={formStyles}>
-              <label htmlFor={`answerType-${id}`}>Answer</label>
+            <div style={answerStyles}>
+              <label style={labelStyles} htmlFor={`answerType-${id}`}>
+                Answer
+              </label>
               <select
+                style={selectStyles}
                 id={`answerType-${id}`}
                 value={answerType}
                 onChange={(e) =>
@@ -76,9 +118,10 @@ export default function QuestionForm() {
                 {/* Add more options as needed */}
               </select>
             </div>
-            <div style={formStyles}>
+            <div>
               {/* <label htmlFor={`shortAnswer-${id}`}>Short Answer Text</label> */}
               <input
+                style={inputStyles}
                 type="text"
                 id={`shortAnswer-${id}`}
                 value={shortAnswer}
