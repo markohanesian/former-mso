@@ -47,18 +47,25 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     border: "none",
     cursor: "pointer",
     color: "#fff",
-    fontSize: "1.5rem",
+    fontSize: "12px",
+    fontFamily: "sans-serif",
+    fontWeight: 700,
+    lineHeight: "13px",
+    textAlign: "center",
+    textTransform: "uppercase",
+    background: "rgba(245, 245, 241, 0.2)",
+    height: "30px",
+    padding: "8px",
   };
 
   const inputStyles = {
-    ...buttonStyles,
     background: "none",
     border: "none",
     color: "#fff",
-    fontSize: "1.5rem",
     width: "100%",
     padding: "0.5rem",
     textAlign: "center",
+    fontSize: "22px",
   };
 
   return (
@@ -75,7 +82,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
           style={inputStyles}
           onChange={handleChange}
           onKeyDown={handleEnterPress}
-          maxlength="15"
+          maxLength="15"
         />
       </div>
       <div style={sectionStyles}>
