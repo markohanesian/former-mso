@@ -30,6 +30,13 @@ With the basic functionality complete, I planned to work on the styling. I check
 Initially, the app was not responsive when testing in the mobile phone simulation in the browser. To fix this, I added In this app.css file media queries so that the question container (selected with my specified ID) has a fixed width for desktop sizes that matches Figma.
 In tablet and smartphone sizes, the question width is set to auto, allowing the containers to adjust based on the size of their content.
 
-Second, there were issues with the navbar where the form title and the login button were getting cut off - this is not something planned for in the Figma design, and in a real life example I would have a conversation with the product team to understand if the title needs to be as long as the user specifies or a limited amount of characters and/or truncated text, then get the updated design from the design team, then pivot back to engineering.  
+Second, there were issues with the navbar where the form title and the login button were getting cut off - this is not something planned for in the Figma design, and in a real life example I would have a conversation with the product team to understand if the title needs to be as long as the user specifies or a limited amount of characters and/or truncated text, then get the updated design from the design team, then pivot back to engineering. 
+
+### Accessibility
+Once I had the app at near completion phase, I did a browser test for accessibility using the WAVE browser extension, and the result was one error, a missing form label for the short answer text input portion of the question form: 
+![Missing label error](/public/error-missing-label.png)
+
+Due to the design in Figma specifying that there would be no corresponding label visible above the input area, I added a descriptive aria-label to the input that would be audible but not visible, thus maintaining the design requirement while eliminating the error.
+![Fixed label error](/public/fixed-missing-label.png)
 
 **to be continued**
