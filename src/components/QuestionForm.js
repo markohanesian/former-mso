@@ -39,6 +39,10 @@ export default function QuestionForm() {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
+  };
+
+  const questionStyles = {
+    marginBottom: "32px",
     backgroundColor: "#fff",
     padding: "24px",
     width: "712px",
@@ -119,7 +123,7 @@ export default function QuestionForm() {
     <div>
       <div style={formStyles}>
         {questions.map(({ id, question, answerType, shortAnswer }) => (
-          <div key={id}>
+          <div key={id} style={questionStyles}>
             <form>
               <div>
                 <label style={labelStyles} htmlFor={`question-${id}`}>
