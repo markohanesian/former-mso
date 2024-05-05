@@ -77,6 +77,13 @@ export default function QuestionForm() {
     margin: "24px 0",
   };
 
+  const buttonsContainerStyles = {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "transparent",
+    marginTop: "32px",
+  };
+
   const primaryButtonStyles = {
     width: "100%",
     padding: "8px",
@@ -95,6 +102,7 @@ export default function QuestionForm() {
   const secondaryButtonStyles = {
     width: "100%",
     padding: "8px",
+    margin: "16px 0 0 0",
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
     backgroundColor: "#AE0000", //red
@@ -108,69 +116,73 @@ export default function QuestionForm() {
   };
 
   return (
-    <div style={formStyles}>
-      {questions.map(({ id, question, answerType, shortAnswer }) => (
-        <div key={id}>
-          <form>
-            <div>
-              <label style={labelStyles} htmlFor={`question-${id}`}>
-                Question
-              </label>
-              <input
-                style={inputStyles}
-                type="text"
-                id={`question-${id}`}
-                value={question}
-                onChange={(e) =>
-                  handleQuestionChange(id, "question", e.target.value)
-                }
-                placeholder="What do you want to ask?"
-              />
-            </div>
-            <div style={answerStyles}>
-              <label style={labelStyles} htmlFor={`answerType-${id}`}>
-                Answer
-              </label>
-              <select
-                style={selectStyles}
-                id={`answerType-${id}`}
-                value={answerType}
-                onChange={(e) =>
-                  handleQuestionChange(id, "answerType", e.target.value)
-                }
-              >
-                <option value="" disabled>
-                  Short Answer
-                </option>
-                <option value="text">Text</option>
-                <option value="number">Number</option>
-                <option value="date">Date</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-            <div>
-              {/* <label htmlFor={`shortAnswer-${id}`}>Short Answer Text</label> */}
-              <input
-                style={inputStyles}
-                type="text"
-                id={`shortAnswer-${id}`}
-                value={shortAnswer}
-                onChange={(e) =>
-                  handleQuestionChange(id, "shortAnswer", e.target.value)
-                }
-                placeholder="Short Answer Text"
-              />
-            </div>
-          </form>
-          <button onClick={() => deleteQuestion(id)}>Delete</button>
-        </div>
-      ))}
-      <button style={primaryButtonStyles} onClick={addQuestion}>
-        + Add Question
-      </button>
-      <button style={secondaryButtonStyles} onClick={handleSaveAndShare}>
-        Save & Share
-      </button>
+    <div>
+      <div style={formStyles}>
+        {questions.map(({ id, question, answerType, shortAnswer }) => (
+          <div key={id}>
+            <form>
+              <div>
+                <label style={labelStyles} htmlFor={`question-${id}`}>
+                  Question
+                </label>
+                <input
+                  style={inputStyles}
+                  type="text"
+                  id={`question-${id}`}
+                  value={question}
+                  onChange={(e) =>
+                    handleQuestionChange(id, "question", e.target.value)
+                  }
+                  placeholder="What do you want to ask?"
+                />
+              </div>
+              <div style={answerStyles}>
+                <label style={labelStyles} htmlFor={`answerType-${id}`}>
+                  Answer
+                </label>
+                <select
+                  style={selectStyles}
+                  id={`answerType-${id}`}
+                  value={answerType}
+                  onChange={(e) =>
+                    handleQuestionChange(id, "answerType", e.target.value)
+                  }
+                >
+                  <option value="" disabled>
+                    Short Answer
+                  </option>
+                  <option value="text">Text</option>
+                  <option value="number">Number</option>
+                  <option value="date">Date</option>
+                  {/* Add more options as needed */}
+                </select>
+              </div>
+              <div>
+                {/* <label htmlFor={`shortAnswer-${id}`}>Short Answer Text</label> */}
+                <input
+                  style={inputStyles}
+                  type="text"
+                  id={`shortAnswer-${id}`}
+                  value={shortAnswer}
+                  onChange={(e) =>
+                    handleQuestionChange(id, "shortAnswer", e.target.value)
+                  }
+                  placeholder="Short Answer Text"
+                />
+              </div>
+            </form>
+            <button onClick={() => deleteQuestion(id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+      <div style={buttonsContainerStyles}>
+        <button style={primaryButtonStyles} onClick={addQuestion}>
+          + Add Question
+        </button>
+        <button style={secondaryButtonStyles} onClick={handleSaveAndShare}>
+          Save & Share
+        </button>
+      </div>
     </div>
   );
 }
