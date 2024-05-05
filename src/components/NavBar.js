@@ -77,7 +77,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
         <input
           id="page-title-input"
           type="text"
-          placeholder="Enter form title"
+          placeholder="New Questionnaire"
           aria-label="Form Title"
           style={inputStyles}
           onChange={handleChange}
