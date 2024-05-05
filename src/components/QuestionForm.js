@@ -77,6 +77,36 @@ export default function QuestionForm() {
     margin: "24px 0",
   };
 
+  const primaryButtonStyles = {
+    width: "100%",
+    padding: "8px",
+    gap: "8px",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    backgroundColor: "transparent",
+    color: "#AE0000", //red
+    fontFamily: "sans-serif",
+    fontSize: "12px",
+    fontWeight: 700,
+    lineHeight: "13px",
+    textAlign: "center",
+    textTransform: "uppercase",
+  };
+
+  const secondaryButtonStyles = {
+    width: "100%",
+    padding: "8px",
+    gap: "8px",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#AE0000", //red
+    color: "#FFF",
+    fontFamily: "sans-serif",
+    fontSize: "12px",
+    fontWeight: 700,
+    lineHeight: "13px",
+    textAlign: "center",
+    textTransform: "uppercase",
+  };
+
   return (
     <div style={formStyles}>
       {questions.map(({ id, question, answerType, shortAnswer }) => (
@@ -135,8 +165,12 @@ export default function QuestionForm() {
           <button onClick={() => deleteQuestion(id)}>Delete</button>
         </div>
       ))}
-      <button onClick={addQuestion}>Add Question</button>
-      <button onClick={handleSaveAndShare}>Save & Share</button>
+      <button style={primaryButtonStyles} onClick={addQuestion}>
+        + Add Question
+      </button>
+      <button style={secondaryButtonStyles} onClick={handleSaveAndShare}>
+        Save & Share
+      </button>
     </div>
   );
 }
