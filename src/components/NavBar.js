@@ -70,7 +70,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
 
   return (
     <header style={navbarStyles}>
-      <div style={sectionStyles}>
+      <div style={{width: "57.34px"}}>
         <FueledIcon />
       </div>
       <div style={{ ...sectionStyles }}>
