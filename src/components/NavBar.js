@@ -24,7 +24,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#AE0000",
-    padding: "12px",
+    padding: "21px 20px",
   };
 
   const sectionStyles = {
