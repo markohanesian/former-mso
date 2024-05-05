@@ -26,6 +26,10 @@ Seeing as how this is a react application and I have hooks at my disposal, I opt
 ### Styling
 With the basic functionality complete, I planned to work on the styling. I check all the corresponding colors, text, container, etc styling of the elements I have on the page and make sure they match in figma, paying careful attention to spacing between elements in the original design. 
 
+For the text in general, I used a sans-serif font to match the custom fonts as closely as possible in Figma. 
+
+There were a few CSS selectors I had never used before, such as those needed to modify the '<select>' arrow - for this I checked MDN docs, stackoverflow, and also asked chatGPT for an optimal solution.
+
 ### Responsive design
 Initially, the app was not responsive when testing in the mobile phone simulation in the browser. To fix this, I added In this app.css file media queries so that the question container (selected with my specified ID) has a fixed width for desktop sizes that matches Figma.
 In tablet and smartphone sizes, the question width is set to auto, allowing the containers to adjust based on the size of their content.
@@ -39,4 +43,4 @@ Once I had the app at near completion phase, I did a browser test for accessibil
 Due to the design in Figma specifying that there would be no corresponding label visible above the input area, I added a descriptive aria-label to the input that would be audible but not visible, thus maintaining the design requirement while eliminating the error.
 ![Fixed label error](/public/fixed-missing-label.png)
 
-**to be continued**
+Though the application is technically accessible compliant, I think its critical to be exceptionally accessible if ever possible, and noticed that there was an "alert" to the fact that I don't have a hierarchy of headings on the page. I could not come up with a solution to add headings to the page, since it would not really make sense given the design and user experience - I even checked Google forms and the same alert was flagged by WAVE so I did not take any more action on it.
