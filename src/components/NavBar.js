@@ -11,9 +11,8 @@ export default function Navbar({ onButtonClick, pageTitle }) {
 
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
-        setInputValue(e.target.value); // Trigger button click action
-        buttonRef.current.focus(); // Move focus to the button
-
+      setInputValue(e.target.value); // Trigger button click action
+      buttonRef.current.focus(); // Move focus to the button
     }
   };
 
@@ -76,6 +75,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
           style={inputStyles}
           onChange={handleChange}
           onKeyDown={handleEnterPress}
+          maxlength="15"
         />
       </div>
       <div style={sectionStyles}>
