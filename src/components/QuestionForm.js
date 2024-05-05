@@ -124,7 +124,7 @@ export default function QuestionForm() {
     backgroundColor: "transparent",
     cursor: "pointer",
     padding: "0",
-    width: "32px"
+    width: "32px",
   };
 
   return (
@@ -180,28 +180,35 @@ export default function QuestionForm() {
                     handleQuestionChange(id, "shortAnswer", e.target.value)
                   }
                   placeholder="Short Answer Text"
+                  aria-label="Enter short answer text"
                 />
               </div>
             </form>
-            <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>
-            <button
-              style={deleteButtonStyles}
-              onClick={() => deleteQuestion(id)}
-              aria-label="delete question"
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+              }}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                style={deleteButtonStyles}
+                onClick={() => deleteQuestion(id)}
+                aria-label="delete question"
               >
-                <path
-                  d="M4.72736 5.091V13.4546H11.2728V5.091H12.3637V14.5455H3.63645V5.091H4.72736ZM7.091 5.81543V12.3637H6.00009V5.81543H7.091ZM10.0001 5.81543V12.3637H8.90918V5.81543H10.0001ZM10.1819 1.45703L10.9092 2.91158H13.091V4.00249H2.90918V2.91158H5.091L5.81827 1.45703H10.1819Z"
-                  fill="#AE0000"
-                />
-              </svg>
-            </button>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.72736 5.091V13.4546H11.2728V5.091H12.3637V14.5455H3.63645V5.091H4.72736ZM7.091 5.81543V12.3637H6.00009V5.81543H7.091ZM10.0001 5.81543V12.3637H8.90918V5.81543H10.0001ZM10.1819 1.45703L10.9092 2.91158H13.091V4.00249H2.90918V2.91158H5.091L5.81827 1.45703H10.1819Z"
+                    fill="#AE0000"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         ))}
