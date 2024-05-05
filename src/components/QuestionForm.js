@@ -58,7 +58,6 @@ export default function QuestionForm() {
   };
 
   const inputStyles = {
-    width: "100%",
     border: "1px solid rgba(0, 0, 0, 0.1)",
     borderRadius: "4px",
     padding: "16px",
