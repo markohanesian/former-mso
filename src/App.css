@@ -30,11 +30,17 @@ div {
   #question-container {
     width: auto; /* Allow container to adjust based on content size */
   }
+  #page-title-input {
+    max-width: 40vw;
+  }
 }
 
 /* For smartphone sizes */
 @media only screen and (max-width: 480px) {
   #question-container {
     width: auto; /* Allow container to adjust based on content size */
+  }
+  #page-title-input {
+    max-width: 40vw;
   }
 }
