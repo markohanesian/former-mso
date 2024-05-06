@@ -47,4 +47,10 @@ Once I had the app at near completion phase, I did a browser test for accessibil
 Due to the design in Figma specifying that there would be no corresponding label visible above the input area, I added a descriptive aria-label to the input that would be audible but not visible, thus maintaining the design requirement while eliminating the error.
 ![Fixed label error](/public/fixed-missing-label.png)
 
+## Final Thoughts
 Though the application is technically accessible compliant, I think its critical to be exceptionally accessible if ever possible, and noticed that there was an "alert" to the fact that I don't have a hierarchy of headings on the page. I could not come up with a solution to add headings to the page, since it would not really make sense given the design and user experience - I even checked Google forms and the same alert was flagged by WAVE so I did not take any more action on it.
+
+Overall I am happy with my work and think that in a real-world setting, this would be a great solution.
+
+## Bonus feature: Orderable Comments
+I was not able to get this done, I got about 90% to a working solution to order the different questions by creating an additional state to capture the amount of comments in the index and assign a unique id that would increment and decrement, however there was something a little off in my function that kept incrementing the number while the same number of questions remained. With some more time I am confident I would come to a solution, however given the amount of time I chose to make sure that the normal requirments of the project were done as well as possible without going for extra credit. 
