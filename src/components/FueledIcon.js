@@ -1,12 +1,6 @@
 import React from "react";
 
 export default function FueledIcon() {
-  // const FueledIconStyles = {
-  //     background: url('your-image-url.jpg'),
-  //     height: 20,
-  //     width: 20,
-  //     display: "block",
-  // }
 
   return (
     <span>

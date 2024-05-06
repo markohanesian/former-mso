@@ -91,7 +91,7 @@ export default function QuestionForm() {
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
     backgroundColor: "transparent",
-    color: "#AE0000", //red
+    color: "#AE0000", 
     fontFamily: "sans-serif",
     fontSize: "12px",
     fontWeight: 700,
@@ -106,7 +106,7 @@ export default function QuestionForm() {
     margin: "16px 0 0 0",
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#AE0000", //red
+    backgroundColor: "#AE0000", 
     color: "#FFF",
     fontFamily: "sans-serif",
     fontSize: "12px",
@@ -166,11 +166,9 @@ export default function QuestionForm() {
                   <option value="text">Text</option>
                   <option value="number">Number</option>
                   <option value="date">Date</option>
-                  {/* Add more options as needed */}
                 </select>
               </div>
               <div>
-                {/* <label htmlFor={`shortAnswer-${id}`}>Short Answer Text</label> */}
                 <input
                   style={inputStyles}
                   type="text"

@@ -1,7 +1,3 @@
-/* .App {
-  text-align: center;
-} */
-
 html {
   background-color: #F5F5F1;
 }
@@ -22,13 +18,13 @@ div {
 
 /* For desktop sizes */
 #question-container {
-  width: 712px; /* Set your fixed width for desktop */
+  width: 712px; 
 }
 
 /* For tablet sizes */
 @media only screen and (max-width: 768px) {
   #question-container {
-    width: auto; /* Allow container to adjust based on content size */
+    width: auto; 
   }
   #page-title-input {
     max-width: 40vw;
@@ -38,7 +34,7 @@ div {
 /* For smartphone sizes */
 @media only screen and (max-width: 480px) {
   #question-container {
-    width: auto; /* Allow container to adjust based on content size */
+    width: auto; 
   }
   #page-title-input {
     max-width: 40vw;

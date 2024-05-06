@@ -3,7 +3,7 @@ import FueledIcon from "./FueledIcon";
 
 export default function Navbar({ onButtonClick, pageTitle }) {
   const [inputValue, setInputValue] = useState(pageTitle);
-  const buttonRef = useRef(null); // Reference to the button element
+  const buttonRef = useRef(null); 
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -11,8 +11,8 @@ export default function Navbar({ onButtonClick, pageTitle }) {
 
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
-      setInputValue(e.target.value); // Trigger button click action
-      buttonRef.current.focus(); // Move focus to the button
+      setInputValue(e.target.value); 
+      buttonRef.current.focus(); 
     }
   };
 
