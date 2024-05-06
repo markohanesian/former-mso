@@ -32,7 +32,7 @@ I check all the corresponding colors, text, container, etc styling of the elemen
 
 For the text in general, I used a sans-serif font to match the custom fonts as closely as possible in Figma. 
 
-There were a few CSS selectors I had never used before, such as those needed to modify the '<select>' arrow - for this I checked MDN docs, stackoverflow, and also asked chatGPT for an optimal solution.
+There were a few CSS selectors I had never used before, such as those needed to modify the select element dropwdown arrow - for this I checked MDN docs, stackoverflow, and also asked chatGPT for an optimal solution.
 
 ### Responsive design
 Initially, the app was not responsive when testing in the mobile phone simulation in the browser. To fix this, I added In this app.css file media queries so that the question container (selected with my specified ID) has a fixed width for desktop sizes that matches Figma.
