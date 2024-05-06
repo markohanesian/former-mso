@@ -14,7 +14,7 @@ Thank you for considering my submission for the frontend web developer position.
 ## Features Implemented
 - Editable Title: The title of the questionnaire is fully editable at the top of the page, allowing users to customize it to their preference.
 - Dynamic Question Management: Users can add new questions by clicking the "ADD QUESTION" button. Additionally, any question can be deleted by interacting with the provided UI.
-- Single Answer Form Type: As per the requirements, I've implemented a single type of answer form, specifically supporting short answer responses.
+- Single Answer Form Type: As per the requirements, I've implemented a single type of answer form, specifically supporting short answer responses. The type of input is also selectable
 - JSON Data Output: Clicking on "SAVE & SHARE" triggers the output of a JSON data structure representing the questionnaire viewable in the browser console for easy access and verification. Multiple questions are outputted as arrays.
 
 ## Approach
@@ -24,7 +24,11 @@ Given that I had a deadline for this assignment, as well as the requirement to n
 Seeing as how this is a react application and I have hooks at my disposal, I opted to use useState to manage the creation and deletion of questions on the form. In order to enable add and delete new questions, I created a mapping function to add new questions with a corresponding id that I passed into the original component. 
 
 ### Styling
-With the basic functionality complete, I planned to work on the styling. I check all the corresponding colors, text, container, etc styling of the elements I have on the page and make sure they match in figma, paying careful attention to spacing between elements in the original design. 
+With the basic functionality complete, I planned to work on the styling. 
+
+I chose to create styling classes as objects in respective component files and simply call the respective objects in-line for each component.  
+
+I check all the corresponding colors, text, container, etc styling of the elements I have on the page and make sure they match in figma, paying careful attention to spacing between elements in the original design. 
 
 For the text in general, I used a sans-serif font to match the custom fonts as closely as possible in Figma. 
 
