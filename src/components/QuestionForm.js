@@ -220,9 +220,6 @@ export default function QuestionForm() {
         <button style={primaryButtonStyles} onClick={addQuestion}>
           + Add Question
         </button>
-        <button style={secondaryButtonStyles} onClick={handleSaveAndShare}>
-          Save & Share
-        </button>
       </div>
     </div>
   );
