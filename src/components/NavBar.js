@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import FormerIcon from "./FormerIcon";
+import ExportButton from "./ExportButton";
 
 export default function Navbar({ onButtonClick, pageTitle }) {
   const [, setInputValue] = useState(pageTitle);
-  const buttonRef = useRef(null); 
+  const buttonRef = useRef(null);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -11,8 +12,8 @@ export default function Navbar({ onButtonClick, pageTitle }) {
 
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
-      setInputValue(e.target.value); 
-      buttonRef.current.focus(); 
+      setInputValue(e.target.value);
+      buttonRef.current.focus();
     }
   };
 
@@ -32,21 +33,6 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     alignItems: "center",
   };
 
-  const buttonStyles = {
-    border: "none",
-    cursor: "pointer",
-    color: "#fff",
-    fontSize: "12px",
-    fontFamily: "sans-serif",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
-    background: "rgba(245, 245, 241, 0.2)",
-    height: "30px",
-    padding: "8px",
-  };
-
   const inputStyles = {
     background: "none",
     border: "none",
@@ -59,7 +45,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
 
   return (
     <header style={navbarStyles}>
-      <div style={{width: "57.34px"}}>
+      <div style={{ width: "57.34px" }}>
         <FormerIcon />
       </div>
       <div style={{ ...sectionStyles }}>
@@ -75,9 +61,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
         />
       </div>
       <div style={sectionStyles}>
-        <button style={buttonStyles} onClick={onButtonClick} ref={buttonRef}>
-          Log In
-        </button>
+        <ExportButton />
       </div>
     </header>
   );
