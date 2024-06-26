@@ -91,21 +91,6 @@ export default function QuestionForm() {
   const primaryButtonStyles = {
     width: "100%",
     padding: "8px",
-    gap: "8px",
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: "transparent",
-    color: "#333", 
-    fontFamily: "sans-serif",
-    fontSize: "12px",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
-  };
-
-  const secondaryButtonStyles = {
-    width: "100%",
-    padding: "8px",
     margin: "16px 0 0 0",
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
@@ -118,6 +103,22 @@ export default function QuestionForm() {
     textAlign: "center",
     textTransform: "uppercase",
   };
+
+  // saving for future
+  // const secondaryButtonStyles = {
+  //   width: "100%",
+  //   padding: "8px",
+  //   gap: "8px",
+  //   border: "1px solid rgba(0, 0, 0, 0.1)",
+  //   backgroundColor: "transparent",
+  //   color: "#333", 
+  //   fontFamily: "sans-serif",
+  //   fontSize: "12px",
+  //   fontWeight: 700,
+  //   lineHeight: "13px",
+  //   textAlign: "center",
+  //   textTransform: "uppercase",
+  // };
 
   const deleteButtonStyles = {
     padding: "8px",
