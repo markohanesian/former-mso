@@ -1,21 +1,7 @@
-import React, { useState, useRef } from "react";
 import FormerIcon from "./FormerIcon";
 import ExportButton from "./ExportButton";
 
-export default function Navbar({ onButtonClick, pageTitle }) {
-  const [, setInputValue] = useState(pageTitle);
-  const buttonRef = useRef(null);
-
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleEnterPress = (e) => {
-    if (e.key === "Enter") {
-      setInputValue(e.target.value);
-      buttonRef.current.focus();
-    }
-  };
+export default function Navbar() {
 
   const navbarStyles = {
     margin: 0,
@@ -33,14 +19,10 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     alignItems: "center",
   };
 
-  const inputStyles = {
-    background: "none",
-    border: "none",
-    color: "#fff",
-    width: "100%",
-    padding: "0.5rem",
-    textAlign: "center",
-    fontSize: "22px",
+  const PageTitleStyle = {
+    color: "#fff", 
+    fontFamily: "sans-serif",
+    fontWeight: "400",
   };
 
   return (
@@ -49,16 +31,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
         <FormerIcon />
       </div>
       <div style={{ ...sectionStyles }}>
-        <input
-          id="page-title-input"
-          type="text"
-          placeholder="New Questionnaire"
-          aria-label="Form Title"
-          style={inputStyles}
-          onChange={handleChange}
-          onKeyDown={handleEnterPress}
-          maxLength="15"
-        />
+        <h1 style={PageTitleStyle}>FORMER</h1>
       </div>
       <div style={sectionStyles}>
         <ExportButton />
