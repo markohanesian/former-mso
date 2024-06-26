@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import FueledIcon from "./FueledIcon";
+import FormerIcon from "./FormerIcon";
 
 export default function Navbar({ onButtonClick, pageTitle }) {
-  const [inputValue, setInputValue] = useState(pageTitle);
+  const [, setInputValue] = useState(pageTitle);
   const buttonRef = useRef(null); 
 
   const handleChange = (e) => {
@@ -32,18 +32,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     alignItems: "center",
   };
 
-  const titleStyles = {
-    margin: "0",
-    color: "#fff",
-    fontFamily: "sans-serif",
-    fontSize: 22,
-    fontWeight: 700,
-    lineHeight: 26.4,
-    textAlign: "center",
-  };
-
   const buttonStyles = {
-    background: "none",
     border: "none",
     cursor: "pointer",
     color: "#fff",
@@ -71,7 +60,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
   return (
     <header style={navbarStyles}>
       <div style={{width: "57.34px"}}>
-        <FueledIcon />
+        <FormerIcon />
       </div>
       <div style={{ ...sectionStyles }}>
         <input
