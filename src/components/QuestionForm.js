@@ -126,7 +126,6 @@ export default function QuestionForm() {
     border: "none",
     backgroundColor: "transparent",
     cursor: "pointer",
-    padding: "0",
     width: "32px",
   };
 
