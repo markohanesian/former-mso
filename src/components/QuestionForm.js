@@ -160,9 +160,6 @@ export default function QuestionForm() {
                     handleQuestionChange(id, "answerType", e.target.value)
                   }
                 >
-                  <option value="" disabled>
-                    Short Answer
-                  </option>
                   <option value="text">Text</option>
                   <option value="number">Number</option>
                   <option value="date">Date</option>
