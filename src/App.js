@@ -1,6 +1,7 @@
-import './App.css';
-import QuestionForm from './components/QuestionForm';
-import Navbar from './components/NavBar';
+import "./App.css";
+import QuestionForm from "./components/QuestionForm";
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       >
         <QuestionForm />
       </main>
+      <Footer />
     </div>
   );
 }
