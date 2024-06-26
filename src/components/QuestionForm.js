@@ -33,10 +33,11 @@ export default function QuestionForm() {
     setQuestions(updatedQuestions);
   };
 
-  const handleSaveAndShare = () => {
-    const questionnaireData = questions.map(({ id, ...rest }) => rest);
-    console.log(questionnaireData); // Output JSON data structure to console
-  };
+  // saving this for future
+  // const handleSaveAndShare = () => {
+  //   const questionnaireData = questions.map(({ id, ...rest }) => rest);
+  //   console.log(questionnaireData); // Output JSON data structure to console
+  // };
 
   const formStyles = {
     display: "flex",
