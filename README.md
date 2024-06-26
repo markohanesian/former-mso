@@ -2,7 +2,7 @@
 ![Former Image](/public/preview.png)
 
 ## Links
-* [React Social](https://social-media-app-mso.web.app/)
+* [Former](https://former-mso.netlify.app/)
 
 ## Description
 A web app that allows you to create your own form or questionnaire in various formats, and export to pdf
