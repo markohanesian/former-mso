@@ -3,17 +3,42 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 const ExportButton = () => {
-  const exportToPDF = () => {
+  const exportToPDF = async () => {
     const input = document.getElementById("screen");
-    html2canvas(input).then((canvas) => {
+    const inputHeight = input.clientHeight;
+    const inputWidth = input.clientWidth;
+    const pdf = new jsPDF("p", "pt", "a4");
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    let position = 0;
+
+    while (position < inputHeight) {
+      const canvas = await html2canvas(input, {
+        windowWidth: inputWidth,
+        windowHeight: pageHeight,
+        x: 0,
+        y: position,
+        scrollX: 0,
+        scrollY: -window.scrollY,
+        useCORS: true,
+        width: inputWidth,
+        height: pageHeight,
+        scale: 1,
+      });
+
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      if (position > 0) {
+        pdf.addPage();
+      }
+
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save("download.pdf");
-    });
+      position += pageHeight;
+    }
+
+    pdf.save("download.pdf");
   };
 
   const buttonStyles = {
