@@ -91,7 +91,7 @@ export default function QuestionForm() {
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
     backgroundColor: "transparent",
-    color: "#AE0000", 
+    color: "#333", 
     fontFamily: "sans-serif",
     fontSize: "12px",
     fontWeight: 700,
@@ -106,7 +106,7 @@ export default function QuestionForm() {
     margin: "16px 0 0 0",
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#AE0000", 
+    backgroundColor: "#333", 
     color: "#FFF",
     fontFamily: "sans-serif",
     fontSize: "12px",
@@ -203,7 +203,7 @@ export default function QuestionForm() {
                 >
                   <path
                     d="M4.72736 5.091V13.4546H11.2728V5.091H12.3637V14.5455H3.63645V5.091H4.72736ZM7.091 5.81543V12.3637H6.00009V5.81543H7.091ZM10.0001 5.81543V12.3637H8.90918V5.81543H10.0001ZM10.1819 1.45703L10.9092 2.91158H13.091V4.00249H2.90918V2.91158H5.091L5.81827 1.45703H10.1819Z"
-                    fill="#AE0000"
+                    fill="#333"
                   />
                 </svg>
               </button>

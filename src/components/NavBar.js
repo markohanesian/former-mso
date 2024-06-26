@@ -23,7 +23,7 @@ export default function Navbar({ onButtonClick, pageTitle }) {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#AE0000",
+    backgroundColor: "#333",
     padding: "21px 20px",
   };
 
