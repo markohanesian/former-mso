@@ -22,20 +22,21 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
   };
 
   const inputStyles = {
-    background: "none",
+    background: "#333",
     border: "none",
     color: "#fff",
     width: "100%",
     padding: "0.5rem",
     textAlign: "center",
     fontSize: "22px",
+    marginBottom: "1rem"
   };
 
   return (
     <input
       id="page-title-input"
       type="text"
-      placeholder="New Questionnaire"
+      placeholder="Enter Form Title"
       aria-label="Form Title"
       style={inputStyles}
       value={inputValue}
