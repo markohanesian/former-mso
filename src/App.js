@@ -14,6 +14,7 @@ function App() {
           padding: "32px",
         }}
         className="main-content"
+        id="screen"
       >
         <QuestionForm />
       </main>
