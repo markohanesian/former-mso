@@ -18,6 +18,9 @@ export default function QuestionForm() {
   const handleQuestionChange = (id, field, value) => {
     const updatedQuestions = questions.map((question) => {
       if (question.id === id) {
+        if (field === "answerType") {
+          return { ...question, answerType: value, shortAnswer: "" };
+        }
         return { ...question, [field]: value };
       }
       return question;
@@ -168,13 +171,19 @@ export default function QuestionForm() {
               <div>
                 <input
                   style={inputStyles}
-                  type="text"
+                  type={answerType}
                   id={`shortAnswer-${id}`}
                   value={shortAnswer}
                   onChange={(e) =>
                     handleQuestionChange(id, "shortAnswer", e.target.value)
                   }
-                  placeholder="Short Answer Text"
+                  placeholder={
+                    answerType === "text"
+                      ? "Short Answer Text"
+                      : answerType === "number"
+                      ? "Short Answer Number"
+                      : "Short Answer Date"
+                  }
                   aria-label="Enter short answer text"
                 />
               </div>
