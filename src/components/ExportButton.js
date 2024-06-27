@@ -11,34 +11,39 @@ const ExportButton = () => {
     const pageHeight = pdf.internal.pageSize.getHeight();
     let position = 0;
 
-    while (position < inputHeight) {
-      const canvas = await html2canvas(input, {
-        windowWidth: inputWidth,
-        windowHeight: pageHeight,
-        x: 0,
-        y: position,
-        scrollX: 0,
-        scrollY: -window.scrollY,
-        useCORS: true,
-        width: inputWidth,
-        height: pageHeight,
-        scale: 1,
-      });
+    try {
+      while (position < inputHeight) {
+        const canvas = await html2canvas(input, {
+          windowWidth: inputWidth,
+          windowHeight: pageHeight,
+          x: 0,
+          y: position,
+          scrollX: 0,
+          scrollY: -window.scrollY,
+          useCORS: true,
+          width: inputWidth,
+          height: pageHeight,
+          scale: 1,
+        });
 
-      const imgData = canvas.toDataURL("image/png");
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        const imgData = canvas.toDataURL("image/png");
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      if (position > 0) {
-        pdf.addPage();
+        if (position > 0) {
+          pdf.addPage();
+        }
+
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        position += pageHeight;
       }
 
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      position += pageHeight;
+      pdf.save("download.pdf");
+    } catch (error) {
+      console.error("Error exporting to PDF:", error);
+      alert("There was an error exporting the PDF. Please try again.");
     }
-
-    pdf.save("download.pdf");
   };
 
   const buttonStyles = {
