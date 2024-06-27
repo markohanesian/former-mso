@@ -28,8 +28,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * jspdf
 
 ## Planned Features/Outstanding Issues
-
 ✅ = fixed
+
+* Export doesn't work on mobile
+* Question inputs export along with answers
+* Text cut off and small in pdf
+* App might work better as an invoice generator
 
 ## Authors
 * [Mark Ohanesian](https://github.com/markohanesian) 
