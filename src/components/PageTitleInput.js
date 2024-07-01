@@ -25,7 +25,6 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
     background: "#333",
     border: "none",
     color: "#fff",
-    width: "100%",
     padding: "0.5rem",
     textAlign: "center",
     fontSize: "22px",
