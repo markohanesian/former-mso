@@ -45,10 +45,12 @@ export default function QuestionForm() {
     alignItems: "flex-start",
   };
 
+  // media queries in app.css
   const questionStyles = {
     marginBottom: "32px",
     backgroundColor: "#fff",
     padding: "24px",
+    width: "712px",
   };
 
   const labelStyles = {
@@ -95,7 +97,7 @@ export default function QuestionForm() {
     margin: "16px 0 0 0",
     gap: "8px",
     border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#333", 
+    backgroundColor: "#333",
     color: "#FFF",
     fontFamily: "sans-serif",
     fontSize: "12px",
@@ -112,7 +114,7 @@ export default function QuestionForm() {
   //   gap: "8px",
   //   border: "1px solid rgba(0, 0, 0, 0.1)",
   //   backgroundColor: "transparent",
-  //   color: "#333", 
+  //   color: "#333",
   //   fontFamily: "sans-serif",
   //   fontSize: "12px",
   //   fontWeight: 700,
