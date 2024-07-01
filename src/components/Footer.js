@@ -6,7 +6,7 @@ const Footer = () => {
   const footerStyle = {
     position: "relative",
     bottom: 0,
-    width: "100%",
+    width: "auto",
     backgroundColor: "transparent",
     margin: "2rem",
     display: "flex",
