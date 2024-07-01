@@ -19,7 +19,7 @@ const Footer = () => {
   const linkStyle = {
     marginLeft: "1rem", // Adjust spacing between links
     textDecoration: "none",
-    color: "black",
+    color: "#0969da",
   };
 
   const handleLinkHover = (event) => {
@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   const handleLinkLeave = (event) => {
-    event.target.style.color = "#333"; // Restore default color
+    event.target.style.color = "#0969da"; // Restore default color
     event.target.style.borderBottomColor = "transparent"; // Hide underline
   };
 
