@@ -147,6 +147,7 @@ export default function QuestionForm() {
                   style={inputStyles}
                   type="text"
                   id={`question-${id}`}
+                  className="pdf-element"
                   value={question}
                   onChange={(e) =>
                     handleQuestionChange(id, "question", e.target.value)
@@ -176,6 +177,7 @@ export default function QuestionForm() {
                   style={inputStyles}
                   type={answerType}
                   id={`shortAnswer-${id}`}
+                  className="pdf-element"
                   value={shortAnswer}
                   onChange={(e) =>
                     handleQuestionChange(id, "shortAnswer", e.target.value)
