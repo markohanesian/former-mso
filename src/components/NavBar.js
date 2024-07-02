@@ -1,5 +1,7 @@
 import FormerIcon from "./FormerIcon";
 import ExportButton from "./ExportButton";
+import Menu from "./Menu";
+
 
 export default function Navbar() {
 
@@ -28,7 +30,7 @@ export default function Navbar() {
   return (
     <header style={navbarStyles}>
       <div style={{ width: "57.34px" }}>
-        <FormerIcon />
+        <Menu />
       </div>
       <div style={{ ...sectionStyles }}>
         <h1 style={PageTitleStyle}>FORMER</h1>
