@@ -12,19 +12,18 @@ const menuButtonStyle = {
 
 const menuStyle = {
   position: "absolute",
-  top: "50px",
-  right: "0",
-  border: "1px solid #ccc",
-  backgroundColor: "#fff",
-  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+  top: "80px",
+  backgroundColor: "#333",
+  boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.1)",
   padding: "10px",
   zIndex: 1000,
+  width: "300px",
 };
 
 const MenuButtonIconStyle = {
-    color: '#fff',
-    fontSize: "2rem"
-}
+  color: "#fff",
+  fontSize: "2rem",
+};
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,15 +33,17 @@ export default function Menu() {
   return (
     <>
       <button style={menuButtonStyle} onClick={toggleMenu}>
-        <span style={MenuButtonIconStyle} class="material-symbols-outlined">menu</span>
+        <span style={MenuButtonIconStyle} class="material-symbols-outlined">
+          menu
+        </span>
       </button>
       {isOpen && (
         <div style={menuStyle}>
           <ul>
             <ExportButton />
-            <li>One</li>
+            {/* <li>One</li>
             <li>Two</li>
-            <li>Three</li>
+            <li>Three</li> */}
           </ul>
         </div>
       )}
