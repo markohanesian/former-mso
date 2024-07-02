@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormerIcon from "./FormerIcon";
+import ExportButton from "./ExportButton";
 
 const menuButtonStyle = {
   backgroundColor: "transparent",
@@ -13,7 +14,7 @@ const menuButtonStyle = {
 const menuStyle = {
   position: "absolute",
   top: "50px",
-  left: "0",
+  right: "0",
   border: "1px solid #ccc",
   backgroundColor: "#fff",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
@@ -34,6 +35,7 @@ export default function Menu() {
       {isOpen && (
         <div style={menuStyle}>
           <ul>
+            <ExportButton />
             <li>One</li>
             <li>Two</li>
             <li>Three</li>
