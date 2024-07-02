@@ -65,11 +65,12 @@ export default function QuestionForm() {
   const inputStyles = {
     border: "1px solid rgba(0, 0, 0, 0.1)",
     borderRadius: "4px",
-    padding: "16px",
+    padding: "8px",
     fontFamily: "sans-serif",
     fontSize: 16,
     fontWeight: 400,
     textAlign: "left",
+    lineHeight: "2rem"
   };
 
   const selectStyles = {
