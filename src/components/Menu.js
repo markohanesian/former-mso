@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FormerIcon from "./FormerIcon";
 import ExportButton from "./ExportButton";
 
 const menuButtonStyle = {
@@ -22,6 +21,11 @@ const menuStyle = {
   zIndex: 1000,
 };
 
+const MenuButtonIconStyle = {
+    color: '#fff',
+    fontSize: "2rem"
+}
+
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -30,7 +34,7 @@ export default function Menu() {
   return (
     <>
       <button style={menuButtonStyle} onClick={toggleMenu}>
-        <FormerIcon />
+        <span style={MenuButtonIconStyle} class="material-symbols-outlined">menu</span>
       </button>
       {isOpen && (
         <div style={menuStyle}>
