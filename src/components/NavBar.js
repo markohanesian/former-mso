@@ -1,10 +1,7 @@
 import FormerIcon from "./FormerIcon";
-import ExportButton from "./ExportButton";
 import Menu from "./Menu";
 
-
 export default function Navbar() {
-
   const navbarStyles = {
     margin: 0,
     width: "auto",
@@ -22,7 +19,7 @@ export default function Navbar() {
   };
 
   const PageTitleStyle = {
-    color: "#fff", 
+    color: "#fff",
     fontFamily: "sans-serif",
     fontWeight: "400",
   };
@@ -30,13 +27,13 @@ export default function Navbar() {
   return (
     <header style={navbarStyles}>
       <div style={{ width: "57.34px" }}>
-        <Menu />
+        <FormerIcon />
       </div>
       <div style={{ ...sectionStyles }}>
         <h1 style={PageTitleStyle}>FORMER</h1>
       </div>
       <div style={sectionStyles}>
-        <ExportButton />
+        <Menu />
       </div>
     </header>
   );
