@@ -34,6 +34,7 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
   return (
     <input
       id="page-title-input"
+      className="pdf-element"
       type="text"
       placeholder="Enter Form Title"
       aria-label="Form Title"

@@ -4,46 +4,42 @@ import jsPDF from "jspdf";
 
 const ExportButton = () => {
   const exportToPDF = async () => {
-    const input = document.getElementById("screen");
-    const inputHeight = input.clientHeight;
-    const inputWidth = input.clientWidth;
     const pdf = new jsPDF("p", "pt", "a4");
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    let position = 0;
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+    const margin = 10;
+    let position = margin;
 
-    try {
-      while (position < inputHeight) {
-        const canvas = await html2canvas(input, {
-          windowWidth: inputWidth,
-          windowHeight: pageHeight,
-          x: 0,
-          y: position,
-          scrollX: 0,
-          scrollY: -window.scrollY,
-          useCORS: true,
-          width: inputWidth,
-          height: pageHeight,
-          scale: window.devicePixelRatio,
-        });
+    // Select all elements with the class name 'pdf-element'
+    const elements = document.querySelectorAll(".pdf-element");
 
-        const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        const imgProps = pdf.getImageProperties(imgData);
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    // Ensure there are elements to export
+    if (elements.length === 0) {
+      alert("No elements found with the class 'pdf-element'");
+      return;
+    }
 
-        if (position > 0) {
-          pdf.addPage();
-        }
+    for (const element of elements) {
+      const canvas = await html2canvas(element, {
+        useCORS: true,
+        scale: 2, // Increase the scale for better quality
+      });
 
-        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
-        position += pageHeight;
+      const imgData = canvas.toDataURL("image/png");
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      // Check if adding this image would exceed the page height
+      if (position + imgHeight > pdfHeight - margin) {
+        pdf.addPage();
+        position = margin;
       }
 
-      pdf.save("download.pdf");
-    } catch (error) {
-      console.error("Error exporting to PDF:", error);
-      alert("There was an error exporting the PDF. Please try again.");
+      pdf.addImage(imgData, "PNG", margin, position, pdfWidth - margin * 2, imgHeight);
+      position += imgHeight + margin;
     }
+
+    pdf.save("download.pdf");
   };
 
   const buttonStyles = {
