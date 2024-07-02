@@ -23,7 +23,7 @@ const ExportButton = () => {
           useCORS: true,
           width: inputWidth,
           height: pageHeight,
-          scale: 1,
+          scale: window.devicePixelRatio,
         });
 
         const imgData = canvas.toDataURL('image/jpeg', 1.0);
