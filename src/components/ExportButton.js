@@ -4,7 +4,7 @@ import jsPDF from "jspdf";
 
 const ExportButton = () => {
   const exportToPDF = async () => {
-    const pdf = new jsPDF("p", "pt", "a4");
+    const pdf = new jsPDF("p", "pt", "letter");
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
     const margin = 10;
@@ -22,7 +22,7 @@ const ExportButton = () => {
     for (const element of elements) {
       const canvas = await html2canvas(element, {
         useCORS: true,
-        scale: 2, // Increase the scale for better quality
+        scale: 4, // Increase the scale for better quality
       });
 
       const imgData = canvas.toDataURL("image/png");
