@@ -5,9 +5,8 @@ import jsPDF from "jspdf";
 const ExportButton = () => {
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
-    const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
-    const margin = 10;
+    const margin = 60;
     let position = margin;
 
     // Select all elements with the class name 'pdf-element'
@@ -20,14 +19,21 @@ const ExportButton = () => {
     }
 
     for (const element of elements) {
+      const elementWidth = element.offsetWidth;
+      const elementHeight = element.offsetHeight;
+
+      // Capture the element with html2canvas
       const canvas = await html2canvas(element, {
         useCORS: true,
-        scale: 4, // Increase the scale for better quality
+        scale: 2, // Capture at higher resolution
+        width: elementWidth,
+        height: elementHeight,
       });
 
       const imgData = canvas.toDataURL("image/png");
       const imgProps = pdf.getImageProperties(imgData);
-      const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      const imgWidth = elementWidth; // Use the original width
+      const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
 
       // Check if adding this image would exceed the page height
       if (position + imgHeight > pdfHeight - margin) {
@@ -35,7 +41,7 @@ const ExportButton = () => {
         position = margin;
       }
 
-      pdf.addImage(imgData, "PNG", margin, position, pdfWidth - margin * 2, imgHeight);
+      pdf.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
       position += imgHeight + margin;
     }
 
