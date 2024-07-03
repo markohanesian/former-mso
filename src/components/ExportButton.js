@@ -5,8 +5,9 @@ import jsPDF from "jspdf";
 const ExportButton = () => {
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
-    const margin = 60;
+    const margin = 50;
     let position = margin;
 
     // Select all elements with the class name 'pdf-element'
@@ -35,13 +36,16 @@ const ExportButton = () => {
       const imgWidth = elementWidth; // Use the original width
       const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
 
+      // Calculate the horizontal position to center the element
+      const horizontalPosition = (pdfWidth - imgWidth) / 2;
+
       // Check if adding this image would exceed the page height
       if (position + imgHeight > pdfHeight - margin) {
         pdf.addPage();
         position = margin;
       }
 
-      pdf.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, "PNG", horizontalPosition, position, imgWidth, imgHeight);
       position += imgHeight + margin;
     }
 
