@@ -22,13 +22,13 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
   };
 
   const inputStyles = {
-    background: "#333",
+    background: "transparent",
     border: "none",
-    color: "#fff",
     padding: "0.5rem",
     textAlign: "center",
     fontSize: "22px",
-    marginBottom: "1rem"
+    marginBottom: "1rem",
+    fontWeight: "600"
   };
 
   return (
@@ -44,6 +44,7 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
       onKeyDown={handleEnterPress}
       maxLength="15"
       ref={inputRef}
+      component="h1"
     />
   );
 }
