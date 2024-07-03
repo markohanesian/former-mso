@@ -59,7 +59,7 @@ const ExportButton = () => {
 
   return (
     <button onClick={exportToPDF} style={buttonStyles}>
-      Export to PDF
+      Download
     </button>
   );
 };
