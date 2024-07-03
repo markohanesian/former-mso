@@ -1,5 +1,5 @@
 import FormerIcon from "./FormerIcon";
-import Menu from "./Menu";
+import ExportButton from "./ExportButton";
 
 export default function Navbar() {
   const navbarStyles = {
@@ -33,7 +33,7 @@ export default function Navbar() {
         <h1 style={PageTitleStyle}>FORMER</h1>
       </div>
       <div style={sectionStyles}>
-        <Menu />
+        <ExportButton />
       </div>
     </header>
   );
