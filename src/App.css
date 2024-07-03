@@ -7,10 +7,6 @@ div {
   flex-direction: column;
 }
 
-#page-title-input::placeholder {
-  color: #fff;
-}
-
 /*not working*/
 .question-form-input::placeholder {
   color:red;
