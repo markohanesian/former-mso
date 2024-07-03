@@ -30,11 +30,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Planned Features/Outstanding Issues
 ✅ = fixed
 
-* Footer or other element wider than rest of content on screen 
+* Footer or other element wider than rest of content on screen ✅
 * Export doesn't work on mobile ✅
 * Question inputs export along with answers ✅
 * Text cut off and small in pdf ✅
-* App might work better as an invoice generator
 
 ## Authors
 * [Mark Ohanesian](https://github.com/markohanesian) 
