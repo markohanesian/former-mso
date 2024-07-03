@@ -182,13 +182,7 @@ export default function QuestionForm() {
                   onChange={(e) =>
                     handleQuestionChange(id, "shortAnswer", e.target.value)
                   }
-                  placeholder={
-                    answerType === "text"
-                      ? "Short Answer Text"
-                      : answerType === "number"
-                      ? "Short Answer Number"
-                      : "Short Answer Date"
-                  }
+                  placeholder="Answer"
                   aria-label="Enter short answer text"
                 />
               </div>
