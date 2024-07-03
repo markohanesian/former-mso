@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <header style={navbarStyles}>
-      <div style={{ width: "57.34px" }}>
+      <div style={{ width: "88px" }}>
         <FormerIcon />
       </div>
       <div style={{ ...sectionStyles }}>
