@@ -30,6 +30,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Planned Features/Outstanding Issues
 ✅ = fixed
 
+* Exported pdf text scale way too big
 * Footer or other element wider than rest of content on screen ✅
 * Export doesn't work on mobile ✅
 * Question inputs export along with answers ✅
