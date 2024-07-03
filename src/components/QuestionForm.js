@@ -50,7 +50,6 @@ export default function QuestionForm() {
     marginBottom: "32px",
     backgroundColor: "#fff",
     padding: "24px",
-    width: "712px",
   };
 
   const labelStyles = {
