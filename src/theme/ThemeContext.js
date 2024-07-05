@@ -11,6 +11,8 @@ export const ThemeProvider = ({ children, customTheme }) => {
       warning: '#ED6C02', // for potentially dangerous actions or important messages
       info: '#0288D1', // for highlighting neutral information
       success: '#2E7D32', // for indicating the successful completion of an action that the user triggered
+      // component related colors
+      link: "#0969da"
     },
   };
 
