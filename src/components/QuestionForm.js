@@ -27,6 +27,7 @@ export default function QuestionForm() {
   };
 
   const labelStyles = {
+    color: colors.textPrimary,
     fontFamily: "sans-serif",
     fontSize: "12px",
     fontWeight: 400,
