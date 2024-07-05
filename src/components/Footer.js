@@ -20,7 +20,7 @@ const linkStyle = {
   color: "#0969da",
 };
 
-const Footer = () => {
+export default function Footer() {
   const handleLinkHover = (event) => {
     event.target.style.color = "#666"; // Change color on hover
     event.target.style.borderBottomColor = "#666"; // Show underline on hover
@@ -63,5 +63,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

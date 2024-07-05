@@ -17,7 +17,7 @@ const buttonStyles = {
   padding: "8px",
 };
 
-const ExportButton = () => {
+export default function ExportButton() {
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
     const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -80,5 +80,3 @@ const ExportButton = () => {
     </button>
   );
 };
-
-export default ExportButton;
