@@ -1,6 +1,7 @@
 import React from "react";
 import PersonalCopyright from "./PersonalCopyright";
 import { useTheme } from "../theme/ThemeContext";
+import Link from "./Link";
 
 export default function Footer() {
   const { colors } = useTheme();
@@ -15,13 +16,7 @@ export default function Footer() {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "1rem",
-    borderTop: "1px solid #ccc", 
-  };
-  
-  const linkStyle = {
-    marginLeft: "1rem", 
-    textDecoration: "none",
-    color: colors.link,
+    borderTop: `1px solid ${colors.primaryLight}`, 
   };
 
   const handleLinkHover = (event) => {
@@ -38,30 +33,27 @@ export default function Footer() {
     <footer style={footerStyle}>
       <div>
         <PersonalCopyright />
-        <a
+        <Link
           href="mailto:mso872@gmail.com"
-          style={linkStyle}
           onMouseEnter={handleLinkHover}
           onMouseLeave={handleLinkLeave}
         >
           Email
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/markohanesian"
-          style={linkStyle}
           onMouseEnter={handleLinkHover}
           onMouseLeave={handleLinkLeave}
         >
           GitHub
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.linkedin.com/in/mark-ohanesian/"
-          style={linkStyle}
           onMouseEnter={handleLinkHover}
           onMouseLeave={handleLinkLeave}
         >
           LinkedIn
-        </a>
+        </Link>
       </div>
     </footer>
   );
