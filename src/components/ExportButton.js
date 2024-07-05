@@ -16,7 +16,7 @@ export default function ExportButton() {
     lineHeight: "13px",
     textAlign: "center",
     textTransform: "uppercase",
-    background: "rgba(245, 245, 241, 0.2)",
+    background: colors.buttonSecondary,
     height: "30px",
     padding: "8px",
   };
