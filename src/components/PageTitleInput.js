@@ -1,17 +1,20 @@
-// PageTitleInput.js
 import React, { useState, useRef } from "react";
-
-const inputStyles = {
-  background: "transparent",
-  border: "none",
-  padding: "0.5rem",
-  textAlign: "center",
-  fontSize: "22px",
-  marginBottom: "1rem",
-  fontWeight: "600",
-};
+import { useTheme } from "../theme/ThemeContext";
 
 export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
+  const { colors } = useTheme();
+
+  const inputStyles = {
+    background: "transparent",
+    border: "none",
+    padding: "0.5rem",
+    textAlign: "center",
+    fontSize: "22px",
+    marginBottom: "1rem",
+    fontWeight: "600",
+    color: colors.textPrimary,
+  };
+
   const [inputValue, setInputValue] = useState(initialValue);
   const inputRef = useRef(null);
 
