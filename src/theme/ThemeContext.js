@@ -13,6 +13,8 @@ export const ThemeProvider = ({ children, customTheme }) => {
       info: "#0288D1", // for highlighting neutral information
       success: "#2E7D32", // for indicating the successful completion of an action that the user triggered
       // component related colors
+      buttonPrimary: "#333",
+      buttonSecondary: "#fff",
       link: "#0969da",
       // text colors
       textPrimary: "#fff",
