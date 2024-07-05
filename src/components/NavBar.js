@@ -1,4 +1,4 @@
-import FormerIcon from "./FormerIcon";
+import Logo from "./Logo";
 import ExportButton from "./ExportButton";
 
 const navbarStyles = {
@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header style={navbarStyles}>
       <div style={{ width: "88px" }}>
-        <FormerIcon />
+        <Logo />
       </div>
       <div style={{ ...sectionStyles }}>
         <h1 style={PageTitleStyle}>FORMER</h1>
