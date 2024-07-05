@@ -3,9 +3,9 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { useTheme } from "../theme/ThemeContext";
 
-const colors = useTheme;
-
 export default function ExportButton() {
+  const { colors } = useTheme();
+
   const buttonStyles = {
     border: "none",
     cursor: "pointer",
