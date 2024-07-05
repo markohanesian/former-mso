@@ -1,26 +1,29 @@
 import React from "react";
 import PersonalCopyright from "./PersonalCopyright";
-
-const footerStyle = {
-  position: "relative",
-  bottom: 0,
-  width: "auto",
-  backgroundColor: "transparent",
-  margin: "2rem",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "1rem",
-  borderTop: "1px solid #ccc", // Example border styling
-};
-
-const linkStyle = {
-  marginLeft: "1rem", // Adjust spacing between links
-  textDecoration: "none",
-  color: "#0969da",
-};
+import { useTheme } from "../theme/ThemeContext";
 
 export default function Footer() {
+  const colors = useTheme;
+
+  const footerStyle = {
+    position: "relative",
+    bottom: 0,
+    width: "auto",
+    backgroundColor: "transparent",
+    margin: "2rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "1rem",
+    borderTop: "1px solid #ccc", 
+  };
+  
+  const linkStyle = {
+    marginLeft: "1rem", 
+    textDecoration: "none",
+    color: colors.link,
+  };
+
   const handleLinkHover = (event) => {
     event.target.style.color = "#666"; // Change color on hover
     event.target.style.borderBottomColor = "#666"; // Show underline on hover
