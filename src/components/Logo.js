@@ -1,11 +1,11 @@
 import React from "react";
 import { useTheme } from "../theme/ThemeContext";
 
-export default function FormerIcon() {
+export default function Logo() {
   const { colors } = useTheme();
 
   const logoStyle = {
-    fill: colors.secondary,
+    fill: colors.tertiary,
     height: "36px",
     width: "36px"
   }
