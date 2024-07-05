@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTheme } from "../theme/ThemeContext";
+import Button from "./Button";
 
 export default function QuestionForm() {
   const [questions, setQuestions] = useState([
@@ -72,22 +73,6 @@ export default function QuestionForm() {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "transparent",
-  };
-
-  const primaryButtonStyles = {
-    width: "100%",
-    padding: "8px",
-    margin: "16px 0 0 0",
-    gap: "8px",
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: colors.primary,
-    color: "#FFF",
-    fontFamily: "sans-serif",
-    fontSize: "12px",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
   };
 
   const deleteButtonStyles = {
@@ -210,9 +195,9 @@ export default function QuestionForm() {
         ))}
       </div>
       <div style={buttonsContainerStyles}>
-        <button style={primaryButtonStyles} onClick={addQuestion}>
+        <Button onClick={addQuestion}>
           + Add Question
-        </button>
+        </Button>
       </div>
     </div>
   );
