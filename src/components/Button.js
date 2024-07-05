@@ -1,105 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTheme } from "../theme/ThemeContext";
 
-const buttonStyles = {
-  border: "none",
-  cursor: "pointer",
-  fontSize: "12px",
-  fontFamily: "sans-serif",
-  fontWeight: 700,
-  lineHeight: "13px",
-  textAlign: "center",
-  textTransform: "uppercase",
-  height: "30px",
-  padding: "8px",
-};
+export default function Button({ variant, onClick, children, ...props }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const { colors } = useTheme();
 
-const primaryButtonStyles = {
-  ...buttonStyles,
-  backgroundColor: "#333",
-  color: "#fff",
-};
-
-const secondaryButtonStyles = {
-  ...buttonStyles,
-  backgroundColor: "#fff",
-  color: "#333",
-};
-
-const outlinedButtonStyles = {
-  ...buttonStyles,
-  border: "1px solid #333",
-  backgroundColor: "#fff",
-  color: "#333",
-};
-
-export default function Button({ variant, onClick, children }) {
-  let buttonStyle;
+  const buttonStyles = {
+    border: "none",
+    cursor: "pointer",
+    fontSize: "12px",
+    fontFamily: "sans-serif",
+    fontWeight: 700,
+    lineHeight: "13px",
+    textAlign: "center",
+    textTransform: "uppercase",
+    height: "30px",
+    padding: "8px",
+  };
   
-  switch (variant) {
-    case "primary":
-      buttonStyle = primaryButtonStyles;
-      break;
-    case "secondary":
-      buttonStyle = secondaryButtonStyles;
-      break;
-    case "outlined":
-      buttonStyle = outlinedButtonStyles;
-      break;
-    default:
-      buttonStyle = primaryButtonStyles;
-  }
-
-  const handleHover = () => {
-    switch (variant) {
-      case "primary":
-        buttonStyle = {
-          ...primaryButtonStyles,
-          backgroundColor: "#fff",
-          color: "#333",
-        };
-        break;
-      case "secondary":
-        buttonStyle = {
-          ...secondaryButtonStyles,
-          backgroundColor: "#333",
-          color: "#fff",
-        };
-        break;
-      case "outlined":
-        buttonStyle = {
-          ...outlinedButtonStyles,
-          backgroundColor: "#333",
-          color: "#fff",
-        };
-        break;
-      default:
-        break;
-    }
+  const primaryButtonStyles = {
+    backgroundColor: colors.buttonPrimary,
+    color: colors.buttonSecondary,
+  };
+  
+  const secondaryButtonStyles = {
+    backgroundColor: colors.buttonSecondary,
+    color: colors.buttonPrimary,
+  };
+  
+  const outlinedButtonStyles = {
+    border: `1px solid ${colors.tertiary}`,
+    backgroundColor: "transparent",
+    color: colors.buttonSecondary,
   };
 
-  const handleLeave = () => {
+
+  const getButtonStyle = () => {
+    let baseStyle;
     switch (variant) {
-      case "primary":
-        buttonStyle = primaryButtonStyles;
-        break;
       case "secondary":
-        buttonStyle = secondaryButtonStyles;
+        baseStyle = isHovered
+          ? { ...secondaryButtonStyles, backgroundColor: colors.buttonPrimary, color: colors.buttonSecondary }
+          : secondaryButtonStyles;
         break;
       case "outlined":
-        buttonStyle = outlinedButtonStyles;
+        baseStyle = isHovered
+          ? { ...outlinedButtonStyles, backgroundColor: colors.buttonPrimary, color: colors.buttonSecondary }
+          : outlinedButtonStyles;
         break;
+      case "primary":
       default:
-        break;
+        baseStyle = isHovered
+          ? { ...primaryButtonStyles, backgroundColor: colors.buttonSecondary, color: colors.buttonPrimary }
+          : primaryButtonStyles;
     }
+    return { ...buttonStyles, ...baseStyle };
   };
 
   return (
     <button
-      style={buttonStyle}
+      style={getButtonStyle()}
       onClick={onClick}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleLeave}
-      aria-label={`${variant} button`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      {...props}
     >
       {children}
     </button>
