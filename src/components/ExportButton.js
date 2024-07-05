@@ -2,6 +2,21 @@ import React from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
+const buttonStyles = {
+  border: "none",
+  cursor: "pointer",
+  color: "#fff",
+  fontSize: "12px",
+  fontFamily: "sans-serif",
+  fontWeight: 700,
+  lineHeight: "13px",
+  textAlign: "center",
+  textTransform: "uppercase",
+  background: "rgba(245, 245, 241, 0.2)",
+  height: "30px",
+  padding: "8px",
+};
+
 const ExportButton = () => {
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
@@ -45,26 +60,18 @@ const ExportButton = () => {
         position = margin;
       }
 
-      pdf.addImage(imgData, "PNG", horizontalPosition, position, imgWidth, imgHeight);
+      pdf.addImage(
+        imgData,
+        "PNG",
+        horizontalPosition,
+        position,
+        imgWidth,
+        imgHeight
+      );
       position += imgHeight + margin;
     }
 
     pdf.save("download.pdf");
-  };
-
-  const buttonStyles = {
-    border: "none",
-    cursor: "pointer",
-    color: "#fff",
-    fontSize: "12px",
-    fontFamily: "sans-serif",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
-    background: "rgba(245, 245, 241, 0.2)",
-    height: "30px",
-    padding: "8px",
   };
 
   return (

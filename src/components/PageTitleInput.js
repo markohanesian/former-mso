@@ -1,6 +1,16 @@
 // PageTitleInput.js
 import React, { useState, useRef } from "react";
 
+const inputStyles = {
+  background: "transparent",
+  border: "none",
+  padding: "0.5rem",
+  textAlign: "center",
+  fontSize: "22px",
+  marginBottom: "1rem",
+  fontWeight: "600",
+};
+
 export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
   const [inputValue, setInputValue] = useState(initialValue);
   const inputRef = useRef(null);
@@ -19,16 +29,6 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
       }
       inputRef.current.blur();
     }
-  };
-
-  const inputStyles = {
-    background: "transparent",
-    border: "none",
-    padding: "0.5rem",
-    textAlign: "center",
-    fontSize: "22px",
-    marginBottom: "1rem",
-    fontWeight: "600"
   };
 
   return (

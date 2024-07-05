@@ -1,10 +1,11 @@
 import React from "react";
 
+const CurrentYearStyle = {
+  fontSize: "1.2rem",
+  fontWeight: "500",
+};
+
 export default function PersonalCopyright() {
-  const CurrentYearStyle = {
-    fontSize: "1.2rem",
-    fontWeight: "500"
-  };
   const today = new Date();
   var year = today.getFullYear();
 

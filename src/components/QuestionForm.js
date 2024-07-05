@@ -1,5 +1,105 @@
 import React, { useState } from "react";
 
+// saving this for future
+// const handleSaveAndShare = () => {
+//   const questionnaireData = questions.map(({ id, ...rest }) => rest);
+//   console.log(questionnaireData); // Output JSON data structure to console
+// };
+
+const formStyles = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+};
+
+// media queries in app.css
+const questionStyles = {
+  marginBottom: "32px",
+  backgroundColor: "#fff",
+  padding: "24px",
+};
+
+const labelStyles = {
+  fontFamily: "sans-serif",
+  fontSize: "12px",
+  fontWeight: 400,
+  lineHeight: "12px",
+  textAlign: "left",
+  marginBottom: "16px",
+};
+
+const inputStyles = {
+  border: "1px solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "4px",
+  padding: "8px",
+  fontFamily: "sans-serif",
+  fontSize: 16,
+  fontWeight: 400,
+  textAlign: "left",
+  lineHeight: "2rem",
+};
+
+const selectStyles = {
+  border: "1px solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "4px",
+  padding: "11px 16px",
+};
+
+const answerStyles = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  margin: "24px 0",
+};
+
+const buttonsContainerStyles = {
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "transparent",
+};
+
+const primaryButtonStyles = {
+  width: "100%",
+  padding: "8px",
+  margin: "16px 0 0 0",
+  gap: "8px",
+  border: "1px solid rgba(0, 0, 0, 0.1)",
+  backgroundColor: "#333",
+  color: "#FFF",
+  fontFamily: "sans-serif",
+  fontSize: "12px",
+  fontWeight: 700,
+  lineHeight: "13px",
+  textAlign: "center",
+  textTransform: "uppercase",
+};
+
+// saving for future
+// const secondaryButtonStyles = {
+//   width: "100%",
+//   padding: "8px",
+//   gap: "8px",
+//   border: "1px solid rgba(0, 0, 0, 0.1)",
+//   backgroundColor: "transparent",
+//   color: "#333",
+//   fontFamily: "sans-serif",
+//   fontSize: "12px",
+//   fontWeight: 700,
+//   lineHeight: "13px",
+//   textAlign: "center",
+//   textTransform: "uppercase",
+// };
+
+const deleteButtonStyles = {
+  padding: "8px",
+  margin: "16px 0 0 0",
+  gap: "8px",
+  border: "none",
+  backgroundColor: "transparent",
+  cursor: "pointer",
+  width: "32px",
+};
+
 export default function QuestionForm() {
   const [questions, setQuestions] = useState([
     { id: 1, question: "", answerType: "", shortAnswer: "" },
@@ -31,106 +131,6 @@ export default function QuestionForm() {
   const deleteQuestion = (id) => {
     const updatedQuestions = questions.filter((question) => question.id !== id);
     setQuestions(updatedQuestions);
-  };
-
-  // saving this for future
-  // const handleSaveAndShare = () => {
-  //   const questionnaireData = questions.map(({ id, ...rest }) => rest);
-  //   console.log(questionnaireData); // Output JSON data structure to console
-  // };
-
-  const formStyles = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-  };
-
-  // media queries in app.css
-  const questionStyles = {
-    marginBottom: "32px",
-    backgroundColor: "#fff",
-    padding: "24px",
-  };
-
-  const labelStyles = {
-    fontFamily: "sans-serif",
-    fontSize: "12px",
-    fontWeight: 400,
-    lineHeight: "12px",
-    textAlign: "left",
-    marginBottom: "16px",
-  };
-
-  const inputStyles = {
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    borderRadius: "4px",
-    padding: "8px",
-    fontFamily: "sans-serif",
-    fontSize: 16,
-    fontWeight: 400,
-    textAlign: "left",
-    lineHeight: "2rem"
-  };
-
-  const selectStyles = {
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    borderRadius: "4px",
-    padding: "11px 16px",
-  };
-
-  const answerStyles = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    margin: "24px 0",
-  };
-
-  const buttonsContainerStyles = {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "transparent",
-  };
-
-  const primaryButtonStyles = {
-    width: "100%",
-    padding: "8px",
-    margin: "16px 0 0 0",
-    gap: "8px",
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#333",
-    color: "#FFF",
-    fontFamily: "sans-serif",
-    fontSize: "12px",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
-  };
-
-  // saving for future
-  // const secondaryButtonStyles = {
-  //   width: "100%",
-  //   padding: "8px",
-  //   gap: "8px",
-  //   border: "1px solid rgba(0, 0, 0, 0.1)",
-  //   backgroundColor: "transparent",
-  //   color: "#333",
-  //   fontFamily: "sans-serif",
-  //   fontSize: "12px",
-  //   fontWeight: 700,
-  //   lineHeight: "13px",
-  //   textAlign: "center",
-  //   textTransform: "uppercase",
-  // };
-
-  const deleteButtonStyles = {
-    padding: "8px",
-    margin: "16px 0 0 0",
-    gap: "8px",
-    border: "none",
-    backgroundColor: "transparent",
-    cursor: "pointer",
-    width: "32px",
   };
 
   return (
