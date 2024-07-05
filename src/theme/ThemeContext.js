@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children, customTheme }) => {
   const defaultTheme = {
     colors: {
       primary: "#333", // main app theme dark color
-      primaryLight: "rgba(0, 0, 0, 0.1)",
+      primaryLight: "#ccc",
       secondary: "#fff", // main app theme light color
       tertiary: "#FF5733", // app secondary color
       error: "#D32F2F", // for elements that the user should be made aware of
