@@ -195,7 +195,7 @@ export default function QuestionForm() {
         ))}
       </div>
       <div style={buttonsContainerStyles}>
-        <Button onClick={addQuestion}>
+        <Button variant="secondary" onClick={addQuestion}>
           + Add Question
         </Button>
       </div>
