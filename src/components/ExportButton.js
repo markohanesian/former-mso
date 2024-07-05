@@ -1,25 +1,9 @@
 import React from "react";
+import Button from "./Button";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { useTheme } from "../theme/ThemeContext";
 
 export default function ExportButton() {
-  const { colors } = useTheme();
-
-  const buttonStyles = {
-    border: "none",
-    cursor: "pointer",
-    color: colors.primary,
-    fontSize: "12px",
-    fontFamily: "sans-serif",
-    fontWeight: 700,
-    lineHeight: "13px",
-    textAlign: "center",
-    textTransform: "uppercase",
-    background: colors.buttonSecondary,
-    height: "30px",
-    padding: "8px",
-  };
 
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
@@ -78,8 +62,8 @@ export default function ExportButton() {
   };
 
   return (
-    <button onClick={exportToPDF} style={buttonStyles}>
+    <Button onClick={exportToPDF} variant="outlined" aria-label="click to export form to pdf">
       Download
-    </button>
+    </Button>
   );
 }
