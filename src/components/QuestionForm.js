@@ -22,7 +22,7 @@ export default function QuestionForm() {
 
   const questionStyles = {
     marginBottom: "32px",
-    backgroundColor: colors.primary,
+    backgroundColor: "transparent",
     padding: "24px",
   };
 
