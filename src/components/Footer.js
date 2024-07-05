@@ -3,7 +3,7 @@ import PersonalCopyright from "./PersonalCopyright";
 import { useTheme } from "../theme/ThemeContext";
 
 export default function Footer() {
-  const colors = useTheme;
+  const { colors } = useTheme();
 
   const footerStyle = {
     position: "relative",
