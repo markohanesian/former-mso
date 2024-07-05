@@ -37,7 +37,7 @@ export default function QuestionForm() {
   };
 
   const inputStyles = {
-    border: "1px solid rgba(0, 0, 0, 0.1)",
+    border: `1px solid ${colors.primaryLight}`,
     borderRadius: "4px",
     padding: "8px",
     fontFamily: "sans-serif",
