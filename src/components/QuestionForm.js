@@ -28,13 +28,13 @@ export default function QuestionForm() {
   };
 
   const labelStyles = {
-    color: colors.textPrimary,
+    color: colors.textSecondary,
     fontFamily: "sans-serif",
     fontSize: "12px",
     fontWeight: 400,
     lineHeight: "12px",
     textAlign: "left",
-    marginBottom: "16px",
+    marginBottom: "8px",
   };
 
   const inputStyles = {
@@ -46,6 +46,8 @@ export default function QuestionForm() {
     fontWeight: 400,
     textAlign: "left",
     lineHeight: "2rem",
+    width: "-webkit-fill-available",
+    marginBottom: "16px"
   };
 
   const selectStyles = {
@@ -53,7 +55,7 @@ export default function QuestionForm() {
     borderRadius: "4px",
     padding: "12px 16px",
     appearance: "none",
-    width: "271px",
+    width: "-webkit-fill-available",
     WebkitAppearance: "none", // For Safari
     MozAppearance: "none", // For Firefox
     backgroundImage:
@@ -66,7 +68,8 @@ export default function QuestionForm() {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    margin: "24px 0",
+    margin: "12px 0",
+    width: "-webkit-fill-available"
   };
 
   const buttonsContainerStyles = {
@@ -131,7 +134,7 @@ export default function QuestionForm() {
                 onChange={(e) =>
                   handleQuestionChange(id, "question", e.target.value)
                 }
-                placeholder="What do you want to ask?"
+                placeholder="Add some text"
               />
               <div style={answerStyles}>
                 <label style={labelStyles} htmlFor={`answerType-${id}`}>
@@ -150,7 +153,7 @@ export default function QuestionForm() {
                   <option value="date">Date</option>
                 </select>
               </div>
-              <div>
+              <div style={answerStyles}>
                 <input
                   style={inputStyles}
                   type={answerType}
