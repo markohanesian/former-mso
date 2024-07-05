@@ -1,39 +1,44 @@
 import React, { useState } from "react";
 import ExportButton from "./ExportButton";
-
-const menuButtonStyle = {
-  backgroundColor: "transparent",
-  border: "none",
-  boxShadow: "none",
-  padding: "10px",
-  cursor: "pointer",
-  outline: "none",
-};
-
-const menuStyle = {
-  position: "absolute",
-  top: "80px",
-  backgroundColor: "#333",
-  boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.1)",
-  padding: "10px",
-  zIndex: 1000,
-  width: "300px",
-};
-
-const MenuButtonIconStyle = {
-  color: "#fff",
-  fontSize: "2rem",
-};
+import { useTheme } from "../theme/ThemeContext";
 
 export default function Menu() {
+  const { colors } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const menuButtonStyle = {
+    backgroundColor: "transparent",
+    border: "none",
+    boxShadow: "none",
+    padding: "10px",
+    cursor: "pointer",
+    outline: "none",
+    color: colors.textPrimary, 
+  };
+
+  const menuStyle = {
+    position: "absolute",
+    top: "80px",
+    backgroundColor: colors.primary,
+    boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.1)",
+    padding: "10px",
+    zIndex: 1000,
+    width: "300px",
+  };
+
+  const MenuButtonIconStyle = {
+    color: colors.textPrimary,
+    fontSize: "2rem",
+  };
+
   return (
     <>
       <button style={menuButtonStyle} onClick={toggleMenu}>
-        <span style={MenuButtonIconStyle} class="material-symbols-outlined">
+        <span style={MenuButtonIconStyle} className="material-symbols-outlined">
           menu
         </span>
       </button>
@@ -49,4 +54,4 @@ export default function Menu() {
       )}
     </>
   );
-}
+};
