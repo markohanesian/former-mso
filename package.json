@@ -20,6 +20,12 @@
     "test:react": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "preset": "react",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "babel-jest": "^29.7.0",
