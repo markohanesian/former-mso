@@ -1,23 +1,26 @@
 import React from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { useTheme } from "../theme/ThemeContext";
 
-const buttonStyles = {
-  border: "none",
-  cursor: "pointer",
-  color: "#fff",
-  fontSize: "12px",
-  fontFamily: "sans-serif",
-  fontWeight: 700,
-  lineHeight: "13px",
-  textAlign: "center",
-  textTransform: "uppercase",
-  background: "rgba(245, 245, 241, 0.2)",
-  height: "30px",
-  padding: "8px",
-};
+const colors = useTheme;
 
 export default function ExportButton() {
+  const buttonStyles = {
+    border: "none",
+    cursor: "pointer",
+    color: colors.primary,
+    fontSize: "12px",
+    fontFamily: "sans-serif",
+    fontWeight: 700,
+    lineHeight: "13px",
+    textAlign: "center",
+    textTransform: "uppercase",
+    background: "rgba(245, 245, 241, 0.2)",
+    height: "30px",
+    padding: "8px",
+  };
+
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
     const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -79,4 +82,4 @@ export default function ExportButton() {
       Download
     </button>
   );
-};
+}
