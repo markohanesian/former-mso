@@ -38,9 +38,6 @@
   #page-title-input {
     max-width: 40vw;
   }
-  select {
-    width: fit-content;
-  }
 }
 
 /* Small smartphones */
