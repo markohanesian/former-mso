@@ -1,42 +1,29 @@
-html {
-  background-color: #F5F5F1;
-}
-
-div {
-  display: flex;
-  flex-direction: column;
-}
-
-/*not working*/
-.question-form-input::placeholder {
-  color:red;
-}
-
+/* only media queries for responsive design here */
 /* Medium desktops and laptops */
 @media (max-width: 2000px) {
-  #question-container {
-    width: 50vw; 
+  #form-container {
+    width: 50vw;
   }
 }
 
 /* Medium desktops and laptops */
 @media (max-width: 1200px) {
-  #question-container {
-    width: 60vw; 
+  #form-container {
+    width: 60vw;
   }
 }
 
 /* Tablets and small desktops */
 @media (max-width: 992px) {
-  #question-container {
-    width: 60vw; 
+  #form-container {
+    width: 60vw;
   }
 }
 
 /* Landscape tablets and large smartphones */
 @media (max-width: 768px) {
-  #question-container {
-    width: auto; 
+  #form-container {
+    width: auto;
   }
   #page-title-input {
     max-width: 80vw;
@@ -45,8 +32,8 @@ div {
 
 /* Portrait tablets and medium smartphones */
 @media (max-width: 576px) {
-  #question-container {
-    width: auto; 
+  #form-container {
+    width: auto;
   }
   #page-title-input {
     max-width: 40vw;
@@ -58,18 +45,7 @@ div {
 
 /* Small smartphones */
 @media (max-width: 360px) {
-  #question-container {
-    width: auto; 
+  #form-container {
+    width: auto;
   }
-}
-
-select {
-  padding: 12px 16px; 
-  appearance: none;
-  width: 271px;
-  -webkit-appearance: none; /* For Safari */
-  -moz-appearance: none; /* For Firefox */
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.9244 4.36353L14.2905 5.72998L7.87255 12.1479L1.45459 5.72998L2.82041 4.36353L7.87255 9.41503L12.9244 4.36353Z" fill="%23AE0000"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 8px center; 
 }

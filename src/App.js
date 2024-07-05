@@ -6,7 +6,7 @@ import PageTitleInput from "./components/PageTitleInput";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <main
         style={{
@@ -23,7 +23,7 @@ function App() {
         <QuestionForm />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

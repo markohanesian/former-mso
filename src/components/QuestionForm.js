@@ -6,11 +6,17 @@ import React, { useState } from "react";
 //   console.log(questionnaireData); // Output JSON data structure to console
 // };
 
-const formStyles = {
+const formContainerStyles = {
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
 };
+
+const formStyles = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+}
 
 // media queries in app.css
 const questionStyles = {
@@ -42,7 +48,14 @@ const inputStyles = {
 const selectStyles = {
   border: "1px solid rgba(0, 0, 0, 0.1)",
   borderRadius: "4px",
-  padding: "11px 16px",
+  padding: "12px 16px",
+  appearance: "none",
+  width: "271px",
+  WebkitAppearance: "none", // For Safari
+  MozAppearance: "none", // For Firefox
+  backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12.9244 4.36353L14.2905 5.72998L7.87255 12.1479L1.45459 5.72998L2.82041 4.36353L7.87255 9.41503L12.9244 4.36353Z\" fill=\"%23AE0000\"/></svg>')",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "right 8px center",
 };
 
 const answerStyles = {
@@ -135,11 +148,10 @@ export default function QuestionForm() {
 
   return (
     <div>
-      <div style={formStyles}>
+      <div style={formContainerStyles}>
         {questions.map(({ id, question, answerType, shortAnswer }) => (
-          <div id="question-container" key={id} style={questionStyles}>
-            <form>
-              <div>
+          <div id="form-container" key={id} style={questionStyles}>
+            <form style={formStyles}>
                 <label style={labelStyles} htmlFor={`question-${id}`}>
                   Question
                 </label>
@@ -154,7 +166,6 @@ export default function QuestionForm() {
                   }
                   placeholder="What do you want to ask?"
                 />
-              </div>
               <div style={answerStyles}>
                 <label style={labelStyles} htmlFor={`answerType-${id}`}>
                   Answer
