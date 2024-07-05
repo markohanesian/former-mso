@@ -14,7 +14,8 @@ export const ThemeProvider = ({ children, customTheme }) => {
       // component related colors
       link: "#0969da",
       // text colors
-      textPrimary: "#fff"
+      textPrimary: "#fff",
+      textSecondary: '#333'
     },
   };
 
