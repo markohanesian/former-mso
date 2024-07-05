@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children, customTheme }) => {
   const defaultTheme = {
     colors: {
       primary: "#333", // main app theme color
-      primaryLight: "1px solid rgba(0, 0, 0, 0.1)",
+      primaryLight: "rgba(0, 0, 0, 0.1)",
       secondary: "#FF5733", // app secondary color
       error: "#D32F2F", // for elements that the user should be made aware of
       warning: "#ED6C02", // for potentially dangerous actions or important messages
