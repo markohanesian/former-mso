@@ -45,7 +45,7 @@ export default function Button({ variant, onClick, children, ...props }) {
         break;
       case "outlined":
         baseStyle = isHovered
-          ? { ...outlinedButtonStyles, backgroundColor: colors.buttonPrimary, color: colors.buttonSecondary }
+          ? { ...outlinedButtonStyles, backgroundColor: colors.buttonSecondary, color: colors.buttonPrimary }
           : outlinedButtonStyles;
         break;
       case "primary":
