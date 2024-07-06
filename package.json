@@ -21,13 +21,6 @@
     "test:react": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "jest": {
-    "preset": "react",
-    "verbose": true,
-    "transform": {
-      "\\.[jt]sx?$": "babel-jest"
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -51,6 +44,7 @@
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "babel-jest": "^29.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "react-test-renderer": "^18.3.1"
   }
