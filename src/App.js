@@ -1,3 +1,4 @@
+import React from 'react';
 import "./App.css";
 import QuestionForm from "./components/QuestionForm";
 import Navbar from "./components/NavBar";
