@@ -23,8 +23,9 @@
   },
   "jest": {
     "preset": "react",
+    "verbose": true,
     "transform": {
-      "^.+\\.jsx?$": "babel-jest"
+      "\\.[jt]sx?$": "babel-jest"
     }
   },
   "eslintConfig": {
