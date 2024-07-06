@@ -40,6 +40,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [Mark Ohanesian](https://github.com/markohanesian) 
 
 ## License
+![w3c](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fformer-mso.netlify.app%2F)
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 ![GitHub release](https://img.shields.io/github/v/release/markohanesian/social-media-app)
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
