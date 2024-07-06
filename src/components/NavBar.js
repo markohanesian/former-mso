@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
-import ExportButton from "./ExportButton";
+import ExportButton from "./ExportButton/ExportButton";
 import { useTheme } from "../theme/ThemeContext";
 
 export default function Navbar() {
