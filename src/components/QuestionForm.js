@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useTheme } from "../theme/ThemeContext";
 import Button from "./Button";
+import Slide from "@mui/material/Slide";
+import Box from "@mui/material/Box";
 
 export default function QuestionForm() {
   const [questions, setQuestions] = useState([
-    { id: 1, question: "", answerType: "", shortAnswer: "" },
+    { id: 1, question: "", answerType: "", shortAnswer: "", show: true },
   ]);
 
   const { colors } = useTheme();
@@ -94,6 +96,7 @@ export default function QuestionForm() {
       question: "",
       answerType: "",
       shortAnswer: "",
+      show: true,
     };
     setQuestions([...questions, newQuestion]);
   };
@@ -112,89 +115,98 @@ export default function QuestionForm() {
   };
 
   const deleteQuestion = (id) => {
-    const updatedQuestions = questions.filter((question) => question.id !== id);
+    const updatedQuestions = questions.map((question) => 
+      question.id === id ? { ...question, show: false } : question
+    );
     setQuestions(updatedQuestions);
+    setTimeout(() => {
+      setQuestions((prevQuestions) =>
+        prevQuestions.filter((question) => question.id !== id)
+      );
+    }, 300);
   };
 
   return (
     <div>
       <div style={formContainerStyles}>
-        {questions.map(({ id, question, answerType, shortAnswer }) => (
-          <div id="form-container" key={id} style={questionStyles}>
-            <form style={formStyles}>
-              <label style={labelStyles} htmlFor={`question-${id}`}>
-                Question
-              </label>
-              <input
-                style={inputStyles}
-                type="text"
-                id={`question-${id}`}
-                className="pdf-element"
-                value={question}
-                onChange={(e) =>
-                  handleQuestionChange(id, "question", e.target.value)
-                }
-                placeholder="Add some text"
-              />
-              <div style={answerStyles}>
-                <label style={labelStyles} htmlFor={`answerType-${id}`}>
-                  Answer
+        {questions.map(({ id, question, answerType, shortAnswer, show }) => (
+          <Slide direction="up" in={show} mountOnEnter unmountOnExit key={id}>
+            <Box id="form-container" style={questionStyles}>
+              <form style={formStyles}>
+                <label style={labelStyles} htmlFor={`question-${id}`}>
+                  Question
                 </label>
-                <select
-                  style={selectStyles}
-                  id={`answerType-${id}`}
-                  value={answerType}
-                  onChange={(e) =>
-                    handleQuestionChange(id, "answerType", e.target.value)
-                  }
-                >
-                  <option value="text">Text</option>
-                  <option value="number">Number</option>
-                  <option value="date">Date</option>
-                </select>
-              </div>
-              <div style={answerStyles}>
                 <input
                   style={inputStyles}
-                  type={answerType}
-                  id={`shortAnswer-${id}`}
+                  type="text"
+                  id={`question-${id}`}
                   className="pdf-element"
-                  value={shortAnswer}
+                  value={question}
                   onChange={(e) =>
-                    handleQuestionChange(id, "shortAnswer", e.target.value)
+                    handleQuestionChange(id, "question", e.target.value)
                   }
-                  placeholder="Answer"
-                  aria-label="Enter short answer text"
+                  placeholder="Add some text"
                 />
-              </div>
-            </form>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-end",
-              }}
-            >
-              <button
-                style={deleteButtonStyles}
-                onClick={() => deleteQuestion(id)}
-                aria-label="delete question"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4.72736 5.091V13.4546H11.2728V5.091H12.3637V14.5455H3.63645V5.091H4.72736ZM7.091 5.81543V12.3637H6.00009V5.81543H7.091ZM10.0001 5.81543V12.3637H8.90918V5.81543H10.0001ZM10.1819 1.45703L10.9092 2.91158H13.091V4.00249H2.90918V2.91158H5.091L5.81827 1.45703H10.1819Z"
-                    fill={colors.primary} 
+                <div style={answerStyles}>
+                  <label style={labelStyles} htmlFor={`answerType-${id}`}>
+                    Answer
+                  </label>
+                  <select
+                    style={selectStyles}
+                    id={`answerType-${id}`}
+                    value={answerType}
+                    onChange={(e) =>
+                      handleQuestionChange(id, "answerType", e.target.value)
+                    }
+                  >
+                    <option value="text">Text</option>
+                    <option value="number">Number</option>
+                    <option value="date">Date</option>
+                  </select>
+                </div>
+                <div style={answerStyles}>
+                  <input
+                    style={inputStyles}
+                    type={answerType}
+                    id={`shortAnswer-${id}`}
+                    className="pdf-element"
+                    value={shortAnswer}
+                    onChange={(e) =>
+                      handleQuestionChange(id, "shortAnswer", e.target.value)
+                    }
+                    placeholder="Answer"
+                    aria-label="Enter short answer text"
                   />
-                </svg>
-              </button>
-            </div>
-          </div>
+                </div>
+              </form>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <button
+                  style={deleteButtonStyles}
+                  onClick={() => deleteQuestion(id)}
+                  aria-label="delete question"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.72736 5.091V13.4546H11.2728V5.091H12.3637V14.5455H3.63645V5.091H4.72736ZM7.091 5.81543V12.3637H6.00009V5.81543H7.091ZM10.0001 5.81543V12.3637H8.90918V5.81543H10.0001ZM10.1819 1.45703L10.9092 2.91158H13.091V4.00249H2.90918V2.91158H5.091L5.81827 1.45703H10.1819Z"
+                      fill={colors.primary}
+                    />
+                  </svg>
+                </button>
+              </div>
+            </Box>
+          </Slide>
         ))}
       </div>
       <div style={buttonsContainerStyles}>
@@ -204,4 +216,4 @@ export default function QuestionForm() {
       </div>
     </div>
   );
-};
+}
