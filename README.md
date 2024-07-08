@@ -1,5 +1,5 @@
 # FORMER - A web app by Mark Sarkis Ohanesian
-![Former Image](/public/preview.png)
+![Former Image](/public/app-preview.png)
 
 ## Links
 * [Former](https://former-mso.netlify.app/)
