@@ -8,7 +8,7 @@ export default function ExportButton() {
     const pdf = new jsPDF("p", "pt", "letter");
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
-    const margin = 50;
+    const margin = 10;
     let position = margin;
 
     // Select all elements with the class name 'pdf-element'
@@ -37,7 +37,7 @@ export default function ExportButton() {
       const imgProps = pdf.getImageProperties(imgData);
 
       // Calculate the final image size to fit the PDF width
-      const imgWidth = elementWidth / 1.4; // Adjust scale factor here (1.4 can be adjusted)
+      const imgWidth = elementWidth / 2; // Adjust scale factor here (1.4 can be adjusted)
       const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
 
       // Calculate the horizontal position to center the element
