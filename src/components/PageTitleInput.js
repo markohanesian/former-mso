@@ -12,7 +12,7 @@ export default function PageTitleInput({ initialValue, onChange, onKeyDown }) {
     fontSize: "22px",
     marginBottom: "1rem",
     fontWeight: "600",
-    color: colors.textPrimary,
+    color: colors.textSecondary,
   };
 
   const [inputValue, setInputValue] = useState(initialValue);
