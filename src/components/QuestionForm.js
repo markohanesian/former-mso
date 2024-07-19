@@ -40,7 +40,7 @@ export default function QuestionForm() {
   };
 
   const inputStyles = {
-    border: `1px solid ${colors.primaryLight}`,
+    border: "none",
     borderRadius: "4px",
     padding: "8px",
     fontFamily: "sans-serif",
