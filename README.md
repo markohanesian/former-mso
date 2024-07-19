@@ -30,6 +30,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Planned Features/Outstanding Issues
 ✅ = fixed
 
+* Major bug - forms not exporting on desktop
 * User authentication
 * Saved forms
 
