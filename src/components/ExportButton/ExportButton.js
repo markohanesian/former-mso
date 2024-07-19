@@ -4,7 +4,6 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 export default function ExportButton() {
-
   const exportToPDF = async () => {
     const pdf = new jsPDF("p", "pt", "letter");
     const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -22,7 +21,8 @@ export default function ExportButton() {
     }
 
     for (const element of elements) {
-      const elementWidth = element.offsetWidth;
+      // Constrain the element width to fit within the PDF width
+      const elementWidth = Math.min(element.offsetWidth, pdfWidth - 2 * margin);
       const elementHeight = element.offsetHeight;
 
       // Capture the element with html2canvas
@@ -35,7 +35,9 @@ export default function ExportButton() {
 
       const imgData = canvas.toDataURL("image/png");
       const imgProps = pdf.getImageProperties(imgData);
-      const imgWidth = elementWidth; // Use the original width
+
+      // Calculate the final image size to fit the PDF width
+      const imgWidth = elementWidth / 1.4; // Adjust scale factor here (1.4 can be adjusted)
       const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
 
       // Calculate the horizontal position to center the element
@@ -47,14 +49,7 @@ export default function ExportButton() {
         position = margin;
       }
 
-      pdf.addImage(
-        imgData,
-        "PNG",
-        horizontalPosition,
-        position,
-        imgWidth,
-        imgHeight
-      );
+      pdf.addImage(imgData, "PNG", horizontalPosition, position, imgWidth, imgHeight);
       position += imgHeight + margin;
     }
 
