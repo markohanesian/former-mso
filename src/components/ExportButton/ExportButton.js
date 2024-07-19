@@ -9,7 +9,8 @@ export default function ExportButton() {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
     const margin = 10;
-    let position = margin;
+    const topMargin = 50; // Add a bit more top margin
+    let position = topMargin;
 
     // Select all elements with the class name 'pdf-element'
     const elements = document.querySelectorAll(".pdf-element");
@@ -46,7 +47,7 @@ export default function ExportButton() {
       // Check if adding this image would exceed the page height
       if (position + imgHeight > pdfHeight - margin) {
         pdf.addPage();
-        position = margin;
+        position = topMargin;
       }
 
       pdf.addImage(imgData, "PNG", horizontalPosition, position, imgWidth, imgHeight);
