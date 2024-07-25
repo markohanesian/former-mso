@@ -54,7 +54,7 @@ export default function ExportButton() {
       position += imgHeight + margin;
     }
 
-    pdf.save("download.pdf");
+    pdf.save("former.pdf");
   };
 
   return (
