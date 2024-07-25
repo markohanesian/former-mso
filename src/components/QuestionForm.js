@@ -136,7 +136,7 @@ export default function QuestionForm() {
                 <label style={labelStyles} htmlFor={`question-${id}`}>
                   Question
                 </label>
-                <input
+                <textarea
                   style={inputStyles}
                   type="text"
                   id={`question-${id}`}
@@ -165,7 +165,7 @@ export default function QuestionForm() {
                   </select>
                 </div>
                 <div style={answerStyles}>
-                  <input
+                  <textarea
                     style={inputStyles}
                     type={answerType}
                     id={`shortAnswer-${id}`}
