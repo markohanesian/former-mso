@@ -29,7 +29,7 @@ export default function ExportButton() {
       // Capture the element with html2canvas
       const canvas = await html2canvas(element, {
         useCORS: true,
-        scale: 2, // Capture at higher resolution
+        scale: 3, // Capture at higher resolution
         width: elementWidth,
         height: elementHeight,
       });
@@ -38,7 +38,7 @@ export default function ExportButton() {
       const imgProps = pdf.getImageProperties(imgData);
 
       // Calculate the final image size to fit the PDF width
-      const imgWidth = elementWidth / 2; // Adjust scale factor here (1.4 can be adjusted)
+      const imgWidth = elementWidth / 1.5; // Adjust scale factor here (1.4 can be adjusted)
       const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
 
       // Calculate the horizontal position to center the element
